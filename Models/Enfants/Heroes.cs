@@ -11,8 +11,8 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models.Enfants
     {
         public Heroes(string Nom) : base(Nom)
         {
+
             IsDead = false;
-            Inventory HeroesInventory = new Inventory();
         }
     }
 }

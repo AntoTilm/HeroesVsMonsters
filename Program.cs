@@ -14,14 +14,8 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters
             Dragon dragon1 = new Dragon("Dragon1");
             Human Guts = new Human("Guts");
 
-            Guts.Frappe(orc1);
-            Guts.Frappe(orc1);
-            Guts.Frappe(orc1);
-            Guts.Frappe(orc1);
-            Guts.Frappe(orc1);
-            Guts.Frappe(orc1);
-            Guts.Frappe(orc1);
-            Guts.Frappe(orc1);
+            Combat combat = new Combat();
+            combat.Encounter(Guts, wolf1);
 
 
             //Inventory playerInventory = new Inventory();

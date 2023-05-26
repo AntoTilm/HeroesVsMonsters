@@ -8,19 +8,20 @@ using static System.Net.Mime.MediaTypeNames;
 namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
 {
     internal class Personnage
-    {    
+    {
+        public Inventory inventory { get; set; } = new Inventory();
         public string Name { get; set; }
-        public bool IsDead { get; set; } = false;
-        //{ 
-        //    get
-        //    {
-        //        return HealPoint<=0;
-        //    }
-        //    set
-        //    {
+        public bool IsDead
+        { 
+            get
+            {
+                return HealPoint<=0;
+            }
+            set
+            {
 
-        //    }
-        //}
+            }
+        }
 
         private int _healPoint;
         public int HealPoint 
@@ -34,7 +35,6 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
                 if (value<=0)
                 {
                     _healPoint = 0;
-                    IsDead = true;
                 }
                 else
                 {
@@ -133,5 +133,15 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
             }
         }
 
+        public void Loot(Personnage ennemy)
+        {
+            var inv = ennemy.inventory.GetInventory();
+
+            foreach (string key in inv.Keys)
+            {
+                inventory.AddItem(key, inv[key]);
+                ennemy.inventory.RemoveItem(key, inv[key]);
+            }
+        }
     }
 }

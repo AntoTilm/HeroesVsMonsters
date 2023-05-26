@@ -41,7 +41,7 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
                     {
                         inventory[key] -= itemQuantity;
                         return;
-                    }                
+                    }
                 }
             }
             Console.WriteLine($"Vous ne possedez pas: {itemName}");
@@ -54,17 +54,23 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
                 if (key == itemName)
                 {
                     return entry.Value;
-                }          
+                }
             }
-        Console.WriteLine("Vous ne possedez pas l'item");
-        return 0;                
+            Console.WriteLine("Vous ne possedez pas l'item");
+            return 0;
         }
         public void DisplayInventory()
         {
             foreach (KeyValuePair<string, int> entry in inventory)
             {
-                Console.WriteLine($"L'inventaire contient {entry.Value} de {entry.Key}");                
-            }            
+                Console.WriteLine($"L'inventaire contient {entry.Value} de {entry.Key}");
+            }
         }
+        public Dictionary<string, int> GetInventory()
+        {
+            return inventory;
+                        
+        }
+
     }
 }
