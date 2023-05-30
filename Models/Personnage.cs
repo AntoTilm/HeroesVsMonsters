@@ -24,6 +24,7 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
         }
 
         private int _healPoint;
+
         public int HealPoint 
         { 
             get
@@ -68,6 +69,9 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
                 _endurance = value;
             }
         }
+
+        public int CoordonateX { get; set; }
+        public int CoordonateY { get; set; }
 
 
         public Personnage(string Nom)

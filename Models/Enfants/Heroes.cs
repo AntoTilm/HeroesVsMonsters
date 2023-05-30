@@ -11,7 +11,8 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models.Enfants
     {
         public Heroes(string Nom) : base(Nom)
         {
-
+            CoordonateX = 0;
+            CoordonateY = 0;
             IsDead = false;
         }
     }

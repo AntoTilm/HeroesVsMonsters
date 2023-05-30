@@ -27,13 +27,13 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
             switch (rdn.Next(1, 4))
             {
                 case 1:
-                    monster = new Wolf("Polo");
+                    monster = new Wolf("Wolf1");
                     break;
                 case 2:
-                    monster = new Orc("Pilou");
+                    monster = new Orc("Orc1");
                     break;
                 default:
-                    monster = new Dragon("Shakira");
+                    monster = new Dragon("Dragon1");
                     break;
             }
             return monster;
@@ -44,7 +44,10 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
             while(hero.IsDead == false && monster.IsDead == false)
             {
                 hero.Frappe(monster);
-                monster.Frappe(hero);
+                if (monster.IsDead == false)
+                {
+                    monster.Frappe(hero);
+                }
             }
             if(hero.IsDead == true)
             {
@@ -52,8 +55,9 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
             }
             else
             {
-                //hero.HeroesInventory += monster.MonsterInventory;
+                hero.Loot(monster);
+                hero.inventory.DisplayInventory();
             }
         }
-}
+    }
 }

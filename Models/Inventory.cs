@@ -71,6 +71,5 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
             return inventory;
                         
         }
-
     }
 }

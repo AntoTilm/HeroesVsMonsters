@@ -9,13 +9,33 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters
         {
             Console.WriteLine("Bienvenue dans la forêt de Shorewood, la forêt enchantée du pays de StormWall!\n");
 
-            Orc orc1 = new Orc("Orc1");            
-            Wolf wolf1 = new Wolf("Wolf1");            
-            Dragon dragon1 = new Dragon("Dragon1");
+            //Orc orc1 = new Orc("Orc1");            
+            //Wolf wolf1 = new Wolf("Wolf1");            
+            //Dragon dragon1 = new Dragon("Dragon1");
+
             Human Guts = new Human("Guts");
 
-            Combat combat = new Combat();
-            combat.Encounter(Guts, wolf1);
+            Visual grid = new Visual();
+            grid.CreateGrid(Guts);
+            grid.PopulateGrid();
+
+            grid.ShowGrid(Guts);
+            grid.MoveHero(Guts);
+            grid.ShowGrid(Guts);
+            grid.MoveHero(Guts);
+            grid.ShowGrid(Guts);
+            grid.MoveHero(Guts);
+            grid.ShowGrid(Guts);
+            grid.MoveHero(Guts);
+            grid.ShowGrid(Guts);
+
+
+
+
+            //Combat combat = new Combat();        
+            //combat.Encounter(Guts, combat.GenerateMonster());
+
+
 
 
             //Inventory playerInventory = new Inventory();
