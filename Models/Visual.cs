@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
@@ -11,8 +12,6 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
     internal class Visual
     {
         string[,] grid = new string[15, 15];
-
-
         public void CreateGrid(Heroes hero)
         {
             for (int i = 0; i < grid.GetLength(0); i++)
@@ -44,7 +43,6 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
             switch (Console.ReadKey().Key)
             {                
                 case ConsoleKey.UpArrow:
-
                     hero.CoordonateY -= 1;
                     break;
                 case ConsoleKey.DownArrow:
@@ -60,59 +58,151 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
                     break;
             }
         }
-        public void PopulateGrid() // A TERMINER
+        public void PopulateGrid()
         {
             int ennemyNumber = 10;
-            while(ennemyNumber < 0)
+            while(ennemyNumber > 0)
             {
                 Random rnd = new Random();
                 int i, j;
-                i = rnd.Next(1, grid.GetLength(0));
-                j = rnd.Next(1, grid.GetLength(1));
+                i = rnd.Next(0, grid.GetLength(0));
+                j = rnd.Next(0, grid.GetLength(1));
 
-
-                if (grid[i, j] == "[ ]")
+                if (!Presence9(i, j))
                 {
                     grid[i, j] = "[M]";
                     ennemyNumber--;
                 }
+                Console.Clear();
+                for (int k = 0; k < grid.GetLength(0); k++)
+                {
+                    for (int l = 0; l < grid.GetLength(1); l++)
+                    {
+                        Console.Write(grid[k, l]);
+                    }
+                    Console.WriteLine();                    
+                }
+                Console.WriteLine();
+                Thread.Sleep(10);
+                //Console.Clear();
+            }
+            
+        }
+        public bool Presence4(int x, int y)
+        {
+            if (x + 1 < grid.GetLength(0) && grid[x + 1, y] != "[ ]")
+            {
+                return true;
+            }
+            else if (x - 1 >= 0 && grid[x - 1, y] != "[ ]")
+            {
+                return true;
+            }
+            else if (y + 1 < grid.GetLength(1) && grid[x, y + 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (y - 1 >= 0 && grid[x, y - 1] != "[ ]")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-        public bool Presence(int x, int y) // A TERMINER
+        public bool Presence5(int x, int y)
         {
-            if (grid[x + 1, y] == "[ ]")
+            if (x + 1 < grid.GetLength(0) && grid[x + 1, y] != "[ ]")
+            {
+                return true;
+            }
+            else if (x - 1 >= 0 && grid[x - 1, y] != "[ ]")
+            {
+                return true;
+            }
+            else if (y + 1 < grid.GetLength(1) && grid[x, y + 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (y - 1 >= 0 && grid[x, y - 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (grid[x, y] != "[ ]")
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }
-            else if (grid[x + 1, y + 1] == "[ ]")
+        }
+        public bool Presence9(int x, int y)
+        {
+            if (x + 1 < grid.GetLength(0) && grid[x + 1, y] != "[ ]")
+            {
+                return true;
+            }
+            else if (x + 1 < grid.GetLength(0) && y + 1 < grid.GetLength(1) && grid[x + 1, y + 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (x + 1 < grid.GetLength(0) && y - 1 >= 0 && grid[x + 1, y - 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (x - 1 >= 0 && grid[x - 1, y] != "[ ]")
+            {
+                return true;
+            }
+            else if (x - 1 >= 0 && y + 1 < grid.GetLength(1) && grid[x - 1, y + 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (x - 1 >= 0 && y - 1 >= 0 && grid[x - 1, y - 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (y + 1 < grid.GetLength(1) && grid[x, y + 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (y - 1 >= 0 && grid[x, y - 1] != "[ ]")
+            {
+                return true;
+            }
+            else if (grid[x, y] != "[ ]")
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }
-            else if (grid[x + 1, y - 1] == "[ ]")
+        }
+        public bool Combat4(int x, int y)
+        {
+            if (x + 1 < grid.GetLength(0) && grid[x + 1, y] == "[ ]")
+            {
+                return true;
+            }
+            else if (x - 1 >= 0 && grid[x - 1, y] == "[ ]")
+            {
+                return true;
+            }
+            else if (y + 1 < grid.GetLength(1) && grid[x, y + 1] == "[ ]")
+            {
+                return true;
+            }
+            else if (y - 1 >= 0 && grid[x, y - 1] == "[ ]")
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }
-            else if (grid[x - 1, y] == "[ ]")
-            {
-                return false;
-            }
-            else if (grid[x - 1, y + 1] == "[ ]")
-            {
-                return false;
-            }
-            else if (grid[x - 1, y - 1] == "[ ]")
-            {
-                return false;
-            }
-            else if (grid[x + 1, y] == "[ ]")
-            {
-                return false;
-            }
-            else if (grid[x - 1, y] == "[ ]")
-            {
-                return false;
-            }
-            return true;
         }
     }
 }

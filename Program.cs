@@ -19,24 +19,16 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters
             grid.CreateGrid(Guts);
             grid.PopulateGrid();
 
-            grid.ShowGrid(Guts);
-            grid.MoveHero(Guts);
-            grid.ShowGrid(Guts);
-            grid.MoveHero(Guts);
-            grid.ShowGrid(Guts);
-            grid.MoveHero(Guts);
-            grid.ShowGrid(Guts);
-            grid.MoveHero(Guts);
-            grid.ShowGrid(Guts);
-
-
-
-
-            //Combat combat = new Combat();        
-            //combat.Encounter(Guts, combat.GenerateMonster());
-
-
-
+            while(!Guts.IsDead)
+            {
+                if (grid.Presence4(Guts.CoordonateX, Guts.CoordonateY))
+                {
+                    Combat combat = new Combat();
+                    combat.Encounter(Guts, combat.GenerateMonster());
+                }
+                grid.MoveHero(Guts);
+                grid.ShowGrid(Guts);
+            } 
 
             //Inventory playerInventory = new Inventory();
             //playerInventory.AddItem("Or", 100);
