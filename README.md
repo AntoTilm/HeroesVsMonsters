@@ -1,31 +1,45 @@
 # HeroesVsMonsters
-Projet "Heroes VS Monster"
 
 ![HVMcrop](https://github.com/AntoTilm/HeroesVsMonsters/assets/119782635/80891283-6cf2-44dd-8bab-3c42c3fd24ed)
 
-Ce projet est une application console en C# qui met en pratique les concepts de programmation orientée objet et les compétences acquises jusqu'à présent. Il s'agit d'un jeu simple où un héros se déplace dans une grille virtuelle, cherchant à vaincre des monstres qui sont dispersés aléatoirement sur la grille.
+Projet "Heroes Vs Monsters"
 
-Fonctionnalités clés :
+Capture d'écran du jeu
+Description du Projet
 
-    Héros et Monstres : Créez des objets représentant le héros et les monstres, chacun avec des attributs distincts tels que la santé, la force, et la position sur la grille.
+Le projet "Heroes Vs Monsters" est une application console en C# qui met en pratique les concepts de la programmation orientée objet et les compétences acquises jusqu'à présent. Il s'agit d'un jeu simple où un héros évolue dans une grille virtuelle, cherchant à vaincre des monstres dispersés aléatoirement sur cette grille.
+Fonctionnalités Clés
 
-    Grille de jeu : Mettez en place une grille virtuelle pour représenter le monde du jeu. Le héros peut se déplacer dans cette grille en utilisant des commandes spécifiques.
+Le projet "Heroes Vs Monsters" comprend les fonctionnalités clés suivantes :
+Héros et Monstres
 
-    Combat au contact : Lorsque le héros se déplace à côté d'un monstre, un combat se déclenche automatiquement. La victoire ou la défaite est déterminée en fonction des caractéristiques du héros et du monstre.
+Il permet la création d'objets représentant le héros et les monstres, chacun ayant des attributs distincts tels que la santé, la force, et la position sur la grille.
+Grille de Jeu
 
-    Interface Console : Utilisez l'interface console pour afficher la grille, l'état du héros, des monstres et les résultats des combats.
+Une grille virtuelle est mise en place pour représenter le monde du jeu. Le héros peut se déplacer dans cette grille en utilisant des commandes spécifiques.
+Combat au Contact
 
-Objectif pédagogique :
+Lorsque le héros se déplace à côté d'un monstre, un combat se déclenche automatiquement. L'issue du combat est déterminée en fonction des caractéristiques du héros et du monstre.
+Interface Console
 
-Ce projet a été créé dans le cadre d'un exercice pour appliquer les connaissances en programmation C# et en programmation orientée objet. Il vise à renforcer la compréhension des concepts tels que la création d'objets, l'encapsulation, l'héritage, la polymorphie, et la gestion des interactions dans une application.
-Comment exécuter le projet :
+L'interface console est utilisée pour afficher la grille de jeu, l'état du héros, des monstres, ainsi que les résultats des combats.
+Objectif Pédagogique
 
-    Clônez ce dépôt GitHub.
+Ce projet a été créé dans le cadre d'un exercice pour appliquer les connaissances en programmation C# et en programmation orientée objet. Il vise à renforcer la compréhension des concepts tels que la création d'objets, l'encapsulation, l'héritage, la polymorphie et la gestion des interactions dans une application.
+Comment Exécuter le Projet
+
+Pour exécuter ce projet, suivez ces étapes simples :
+
+    Clônez ce dépôt GitHub dans votre espace de travail.
+
     Ouvrez le projet dans votre environnement de développement C# préféré.
-    Compilez et exécutez le programme.
-    Suivez les instructions dans la console pour jouer au jeu.
 
-Ce projet est destiné à être une base d'apprentissage solide pour ceux qui veulent améliorer leurs compétences en programmation C# et en POO tout en s'amusant avec un petit jeu console.
+    Compilez le programme.
 
-N'hésitez pas à contribuer, à signaler des problèmes ou à proposer des améliorations ! Votre feedback est précieux pour notre apprentissage collectif.
+    Exécutez le programme.
 
+    Suivez les instructions affichées dans la console pour jouer au jeu.
+
+Ce projet a été conçu comme une base solide pour l'apprentissage de la programmation C# et de la programmation orientée objet. Nous encourageons vivement les contributions, les signalements de problèmes, ainsi que les propositions d'améliorations. Votre feedback est précieux pour notre apprentissage collectif.
+
+N'hésitez pas à participer et à vous amuser en explorant ce petit jeu console tout en renforçant vos compétences en programmation orientée objet !
