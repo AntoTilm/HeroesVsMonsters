@@ -26,7 +26,7 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
         public void ShowGrid(Heroes hero)
         {
             Console.Clear();
-            grid[hero.CoordonateY, hero.CoordonateX] = "[H]";
+            grid[hero.CoordonateX, hero.CoordonateY] = "[H]";
             for (int i = 0; i < grid.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
@@ -39,20 +39,20 @@ namespace Exercice_récapitulatif___Heroes_Vs_Monsters.Models
         }
         public void MoveHero(Heroes hero)
         {
-            grid[hero.CoordonateY, hero.CoordonateX] = "[ ]";
+            grid[hero.CoordonateX, hero.CoordonateY] = "[ ]";
             switch (Console.ReadKey().Key)
             {                
                 case ConsoleKey.UpArrow:
-                    hero.CoordonateY -= 1;
-                    break;
-                case ConsoleKey.DownArrow:
-                    hero.CoordonateY += 1;
-                    break;
-                case ConsoleKey.LeftArrow:
                     hero.CoordonateX -= 1;
                     break;
-                case ConsoleKey.RightArrow:
+                case ConsoleKey.DownArrow:
                     hero.CoordonateX += 1;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    hero.CoordonateY -= 1;
+                    break;
+                case ConsoleKey.RightArrow:
+                    hero.CoordonateY += 1;
                     break;
                 default:
                     break;
